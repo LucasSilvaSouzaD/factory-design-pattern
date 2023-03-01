@@ -1,5 +1,11 @@
+class UserRepository {
+    constructor({ dbConnection }) {
+        this.dbConnection = dbConnection
+    }
 
-
-export default class userRepository {
-
+    async find(query) {
+        return this.dbConnection.find(query)
+    }
 }
+
+module.exports = UserRepository
